@@ -1,15 +1,20 @@
 function checkField(){
     // Teste ob Feld angezeigt wird
+    
     var checkFormClass1 = checkFormClass()
+    var searchField = document.getElementsByClassName("search-field")[0]
+    var searchForm = document.getElementsByClassName("search-form")[0]
 
+    if(searchField.value != "") {
+        searchForm.submit()
+    }
+    
     if(checkFormClass1){
         document.getElementsByClassName("search-form")[0].className = "search-form"
-    } else{
-        document.getElementsByClassName("search-form")[0].className = "hide search-form"
+    } else {
+        document.getElementsByClassName("search-form")[0].classname = "hide search-form"
     }
-    // Zugriff auf Feld (Wert aus Feld)
-    // Prüfen ob Feldwert eingetragen
-    // Abschicken des Formulars
+    // Zugriff auf Feld (Wert aus Feld) 
 }
 
 function checkFormClass(){
@@ -26,3 +31,4 @@ function checkFormClass(){
     }
 return check;
 }
+
