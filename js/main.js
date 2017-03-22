@@ -1,7 +1,7 @@
 function ueberpruefe(elem){
 	var inhalt = elem.value;
 	var aktuellesZeichen = inhalt.charAt(inhalt.length - 1);
-	alert(aktuellesZeichen);
+	// alert(aktuellesZeichen);
 	if(isNaN(aktuellesZeichen)){
 		elem.value = "";
 	}
@@ -9,5 +9,5 @@ function ueberpruefe(elem){
 	if(inhalt.length == 2 || inhalt.length == 5){
 		elem.value = elem.value + ".";
 	}
-	
+	return inhalt
 }
