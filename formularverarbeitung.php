@@ -10,6 +10,29 @@ $alter = intval(($jetzt - $geburtstag) / (3600 * 24 * 365));
 return $alter;
 };
 
+function speichereDaten($daten){
+	$vorname = $daten['vorname'];
+	$nachname = $daten['nachname'];
+	$alter =  gibAlter($daten['geburt']);
+	$datenArray = array(
+			"vorname" => $vorname,
+			"nachname" => $nachname,
+			"alter" => $alter,
+	);
+	//Daten aus Datei auslesen und neue Daten an vorhandene Daten setzen
+	$datenAusgelesen = auslesenDaten();
+	$datenAusgelesen[] = $datenArray;
+	
+	//Daten mit neuen Daten in Datei schreiben
+	file_put_contents("daten.txt", serialize($datenAusgelesen));	
+};
+
+function auslesenDaten(){
+	$daten = unserialize(file_get_contents("daten.txt"));
+	return $daten;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -38,9 +61,12 @@ return $alter;
 	<?php if(!empty($_GET['geburt'])): ?>
 		<p>Ihr Alter beträgt: <?php echo gibAlter($_GET['geburt']); ?></p>
 	<?php endif; ?>
+	<?php speichereDaten($_GET); ?>
+	
 <?php endif; ?>
-<?php 
-// Inhalt aus Formularfeld verarbeiten (Umwandlung in Datumsformat womit berechnet werden kann
-// Berechnen des Alters der Person (mit Ausgabe des aktuellen Alters)
-?>
+
+<?php if(file_exists("daten.txt")){ ?>
+	<?php var_dump(auslesenDaten());  ?>
+<?php } ?>
+
 </body>
