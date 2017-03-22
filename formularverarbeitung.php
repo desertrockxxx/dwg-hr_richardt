@@ -27,7 +27,7 @@ return $alter;
 		<input type="text" name="nachname" placeholder="Nachname">
 	</div>
 	<div>
-		<input onkeyup="ueberpruefe(this);" type="text" name="geburt" placeholder="Geburtsdatum (dd.mm.YYYY)">
+		<input onkeyup="ueberpruefe(this, event);" type="text" name="geburt" placeholder="Geburtsdatum (dd.mm.YYYY)">
 	</div>
 	<input type="submit" name="absenden" value="Senden">
 </form>

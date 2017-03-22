@@ -1,13 +1,25 @@
-function ueberpruefe(elem){
+function ueberpruefe(elem, event){
 	var inhalt = elem.value;
-	var aktuellesZeichen = inhalt.charAt(inhalt.length - 1);
-	// alert(aktuellesZeichen);
-	if(isNaN(aktuellesZeichen)){
-		elem.value = "";
+	var counter = inhalt.length - 1;
+	
+	if(isNaN(inhalt[counter])){
+		elem.value = inhalt.substr(0, inhalt.length - 1)
 	}
-	//alert(inhalt.length);
-	if(inhalt.length == 2 || inhalt.length == 5){
-		elem.value = elem.value + ".";
+
+	if(elem.value.length == 2 || elem.value.length == 5){
+		elem.value = elem.value + "."
 	}
-	return inhalt
+	
+	if(elem.value.length > 10){
+		elem.value = inhalt.substr(0, inhalt.length - 1)
+	}	
+	
+	if(checkTaste(event) == 10){
+		elem.value = inhalt.substr(0, inhalt.length)
+	}
+}
+
+function checkTaste(event){
+	var keyID = event.keyCode
+	return keyID
 }
