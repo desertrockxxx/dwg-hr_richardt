@@ -1,0 +1,17 @@
+a:3:{i:0;a:4:{s:5:"titel";s:18:"das ist 1. beitrag";s:6:"inhalt";s:142:"Lorem ipsum dolor sit amet, consetetur 
+                sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
+                ";s:8:"erstellt";s:10:"2014-01-10";s:4:"bild";s:21:"img/beispielbild1.jpg";}i:1;a:4:{s:5:"titel";s:18:"das ist 2. beitrag";s:6:"inhalt";s:299:"nonumy eirmod tempor invidunt
+                ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+                At vero eos et accusam et 
+                justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.";s:8:"erstellt";s:10:"2015-01-10";s:4:"bild";s:21:"img/beispielbild2.jpg";}i:2;a:4:{s:5:"titel";s:18:"das ist 2. beitrag";s:6:"inhalt";s:662:"et dolore magna aliquyam erat, sed diam voluptua. 
+                At vero eos et accusam 
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+                Lorem ipsum dolor
+                sit amet, consetetur sadipscing elitr, sed diam 
+                nonumy eirmod tempor invidunt
+                ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+                At vero eos et accusam et 
+                justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.";s:8:"erstellt";s:10:"2016-01-10";s:4:"bild";s:21:"img/beispielbild3.jpg";}}
