@@ -104,7 +104,8 @@ function auslesenDaten(){
 		$personen = array_reverse(auslesenDaten());
 	}
 	if(isset($_GET['sort']) && $_GET['sort'] == "alter"){
-		$personen = sortArrayByFields(auslesenDaten(), array('alter' => SORT_ASC));
+		$personen = sortArrayByFields(auslesenDaten(), array('alter' => SORT_ASC, 
+		'vorname' => SORT_DESC));
 	}
 	else{
 	$personen = auslesenDaten(); 
