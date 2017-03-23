@@ -1,3 +1,35 @@
+<?php function sortArrayByFields($arr, $fields)
+{
+    $sortFields = array();
+    $args       = array();
+
+    foreach ($arr as $key => $row) {
+        foreach ($fields as $field => $order) {
+            $sortFields[$field][$key] = $row[$field];
+        }
+    }
+
+    foreach ($fields as $field => $order) {
+        $args[] = $sortFields[$field];
+
+        if (is_array($order)) {
+            foreach ($order as $pt) {
+                $args[$pt];
+            }
+        } else {
+            $args[] = $order;
+        }
+    }
+
+    $args[] = &$arr;
+
+    call_user_func_array('array_multisort', $args);
+
+    return $arr;
+} 
+?>
+
+
 <?php 
 function gibAlter($datum){
 //dd.mm.YYY
@@ -71,12 +103,16 @@ function auslesenDaten(){
 	<?php if(isset($_GET['sort']) && $_GET['sort'] == "datum"){ 
 		$personen = array_reverse(auslesenDaten());
 	}
+	if(isset($_GET['sort']) && $_GET['sort'] == "alter"){
+		$personen = sortArrayByFields(auslesenDaten(), array('alter' => SORT_ASC));
+	}
 	else{
 	$personen = auslesenDaten(); 
 	}
 	?>
 	
 	<a href="<?php echo $_SERVER['PHP_SELF']; ?>?sort=datum">Nach Datum sortieren</a>
+	<a href="<?php echo $_SERVER['PHP_SELF']; ?>?sort=alter">Nach Alter sortieren</a>
 	
 	<table>
 		<thead>
