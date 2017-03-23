@@ -1,17 +1,16 @@
-<?php
-// Ein String
-$einString = "Hallo ich bin ein String."; 
-// Funktion schreiben die uns die Anzahl der Wörter des wiedergibt
-function zaehleWoerter($trenner = " ", $platzhalter){ 
+<?php 
+//ein String 
+$einString = "Hallo,ich,bin ein String.";
 
-    $stringArray = explode($trenner, $platzhalter);
-    $anzahlWoerter = count($stringArray);
-
-    return $anzahlWoerter;
+//Funktion schreiben die uns die Anzahl der Wörter innerhalb des String wiedergibt
+function zaehleWoerter($platzhalter, $trenner = " "){
+	//Explode verwenden um String umzuwandeln
+	$meinArray = explode($trenner, $platzhalter);
+	$anzahlWoerter = count($meinArray);
+return $anzahlWoerter;
 };
-echo zaehleWoerter(" ", $einString);
 
-// Vereinfachung
-echo str_word_count($einString)
+echo zaehleWoerter($einString ,",") . "<br>";
+echo str_word_count($einString, 0);
 
 ?>
