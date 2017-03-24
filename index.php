@@ -69,26 +69,23 @@ require_once "lib/functions.php";
 			<?php foreach(leseDaten() as $einzelBeitrag){ ?>
 				<div class="col-md-4 col-sm-4 col-xs-12">
 					<div class="img">
-						
 						<img src="<?php echo $einzelBeitrag['bild']; ?>" class="img-responsive">
 					</div>
-				<div class="meta">
-					<?php echo date("d.m.Y", strtoTime($einzelBeitrag['erstellt'])); ?>
-				</div>	
-				<h1>
-					<?php echo $einzelBeitrag['titel'];?>
-				</h1>
-				<p>
-					<?php echo $einzelBeitrag['inhalt'];?>
-				</p>
+					<div class="meta">
+						<?php echo date("d.m.Y", strtoTime($einzelBeitrag['erstellt'])); ?>
+					</div>	
+					<h1>
+						<?php echo $einzelBeitrag['titel'];?>
+					</h1>
+					<p>
+						<?php echo $einzelBeitrag['inhalt'];?>
+					</p>
 				</div>	
 			<?php } ?>
 		</div>
 	</section>
-	
-	
 
 	<footer>
-
+		<?php echo sortiereNachDatum(); ?>
 	</footer>
 </body>
