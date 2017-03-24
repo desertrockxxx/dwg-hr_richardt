@@ -23,5 +23,8 @@ $(document).ready(function(){
 			$(this).height(highest_element);
 	});
 
+	
+	
 });
 	
+

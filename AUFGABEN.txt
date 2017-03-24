@@ -1,0 +1,13 @@
+Aufgabe für Suche!
+
+1. Schreiben Sie eine Funktion zum sortieren der Beiträge nach Erscheinungsdatum (Absteigend)!
+
+2. 	Das Suchfeld soll funktionieren!
+	Nach Eingabe eines Suchbegriffs soll aus dem Gesamtarray eine Ergebnismenge ausgegeben werden. Wenn es kein Ergebnis gibt, dann soll "Leider gibt es zu Ihrem Suchwort kein Ergebnis" ausgegeben werden!
+	
+	Schreiben Sie eine Funktion die in dem Gesamtarray sucht (anhand des Suchbegriffes) und eventuell ein Ergebnis zurückliefert. 
+	
+	Ausgabe bleibt wie gehabt auf der Startseite.
+	
+	
+
