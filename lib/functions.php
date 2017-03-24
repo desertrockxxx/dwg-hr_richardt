@@ -20,7 +20,7 @@ function searchForWord($searchword, $array) {
 //Nimm Suchwort und Gesamtarray und suche darin 
 function getSearchResult($searchWord, $resultArray){
 	$resultArraySearch = array();
-	// Gib Ergebnisarray mit Index zurück
+	// Gib Ergebnisarray mit Index zurÃ¼ck
 	$searchResultIndex = searchForWord($searchWord, $resultArray);
 	foreach($resultArray as $key => $val){
 		foreach($searchResultIndex as $index){
