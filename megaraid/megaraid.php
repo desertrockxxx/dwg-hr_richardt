@@ -18,7 +18,7 @@ function subtrahieren($wert1, $wert2){
     return $ergebnis;
 }
 
-//Berechnung mit REQUEST, 
+// Berechnung mit REQUEST, 
 // Wenn berechnen1 ist gedrückt(isset) also hat Wert, dann addiereren() Funktion verwendet
 if(isset($_REQUEST['berechnen1'])){
     echo "Ergebnis: " .  addieren($_POST['wert1'], $_POST['wert2']);

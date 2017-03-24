@@ -80,12 +80,14 @@ require_once "lib/functions.php";
 					<p>
 						<?php echo $einzelBeitrag['inhalt'];?>
 					</p>
-				</div>	
+				</div>
 			<?php } ?>
 		</div>
 	</section>
-
+	
+	<p>PRINT_R</p>
+	<?php print_r(searchForWord("Bild2", leseDaten())); ?>
+	
 	<footer>
-		<?php echo sortiereNachDatum(); ?>
 	</footer>
 </body>

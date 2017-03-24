@@ -6,39 +6,68 @@ function leseDaten(){
 	return unserialize(file_get_contents("inhalt.txt"));
 };
 
-function sortiereNachDatum(){
-    return sortArrayByFields(leseDaten(), "erstellt");
+function searchForWord($searchWord, $array){
+    $searchArray = array();
+    foreach($array as $key => $val){
+        if(strpos($val['titel'], $searchWord) !== false || strpos($val['inhalt'], $searchWord) !== false){
+            $searchArray[] = $key;
+        }
+    }
+    if(!empty($searchArray)){
+        return $searchArray;
+    } else {
+        return "Keine Ergebnisse zu Suchbegriff: " . $searchWord . " !";
+    }
+};
+
+function getSearchResult($searchWord, $resultArray){
+    $resultArraySearch = array();
+    // gib Ergebnisarray mit Index zurück
+    $searchResultIndex = searchForWord($searchWord, $resultArray);
+    foreach($resultArray as $key => $val){
+        foreach($searchResultIndex as $index){
+            if($index == $$key){
+                $resultArraySearch[] = $val;
+            }
+        }
+    }
+    return $resultArraySearch;
 }
 
-function sortArrayByFields($arr, $fields)
-{
-    $sortFields = array();
-    $args       = array();
 
-    foreach ($arr as $key => $row) {
-        foreach ($fields as $field => $order) {
-            $sortFields[$field][$key] = $row[$field];
-        }
-    }
+// function sortiereNachDatum(){
+//     return sortArrayByFields(leseDaten(), "erstellt");
+// };
 
-    foreach ($fields as $field => $order) {
-        $args[] = $sortFields[$field];
+// function sortArrayByFields($arr, $fields)
+// {
+//     $sortFields = array();
+//     $args       = array();
 
-        if (is_array($order)) {
-            foreach ($order as $pt) {
-                $args[$pt];
-            }
-        } else {
-            $args[] = $order;
-        }
-    }
+//     foreach ($arr as $key => $row) {
+//         foreach ($fields as $field => $order) {
+//             $sortFields[$field][$key] = $row[$field];
+//         }
+//     }
 
-    $args[] = &$arr;
+//     foreach ($fields as $field => $order) {
+//         $args[] = $sortFields[$field];
 
-    call_user_func_array('array_multisort', $args);
+//         if (is_array($order)) {
+//             foreach ($order as $pt) {
+//                 $args[$pt];
+//             }
+//         } else {
+//             $args[] = $order;
+//         }
+//     }
 
-    return $arr;
-} 
+//     $args[] = &$arr;
+
+//     call_user_func_array('array_multisort', $args);
+
+//     return $arr;
+// } 
 
 ?>
 
