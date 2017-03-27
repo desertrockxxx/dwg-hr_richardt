@@ -19,6 +19,12 @@ $inhalt = array(
 		"erstellt" => "2017-01-30",
 		"bild" => "img/beispielbild3.jpg"
 	), 
+	array(
+		"titel" => "Das ist hier ist ein Beitrag",
+		"inhalt" => "consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. et dolore magna aliquyam et dolore magna aliquyam et dolore magna aliquyam",
+		"erstellt" => "2017-01-30",
+		"bild" => "img/beispielbild4.jpg"
+	), 
 );
 
 file_put_contents("daten/inhalt.txt",serialize($inhalt));
