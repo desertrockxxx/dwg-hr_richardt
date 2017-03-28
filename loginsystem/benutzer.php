@@ -3,7 +3,7 @@
 $benutzer = array(
         array(
                 'benutzername' => 'User1',
-                'passwort' => '$2y$10$Bh43YQ11Di5v0Slko5uX1uQisyQG899RZHqoyMZftCXIjuR51VY76',
+                'passwort' => '$2y$10$Ux/xbQpVgkphIUFed4IH0uaj3eOBuZNF8/f6pG41kpBE8EXBVLaAi',
                 'vorname' => 'Hans',
                 'nachname' => 'Müller',
                 'email' => 'hansmueller@gmx.de',
@@ -28,7 +28,7 @@ $benutzer = array(
     );
     
 // Passwörter hashen    
-//echo password_hash("doge", PASSWORD_DEFAULT);
+// echo password_hash("geheim", PASSWORD_DEFAULT);
 
 // In "benutzer.txt" daten reinschreiben
 //file_put_contents("benutzer.txt", serialize($benutzer));

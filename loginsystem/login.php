@@ -1,7 +1,5 @@
 <?php
-
-
-
+session_start();
 ?>
 
 <!DOCTYPE>
@@ -12,17 +10,23 @@
 </head>
 
 <body>
-<h1>Melden Dich an! Sofort! *peitschenhieb*</h1>
+<h1>Melde Dich an! Sofort! *peitschenhieb*</h1>
 
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+<form action="eingeloggt.php" method="POST">
     <div>
-        <input type="text" name="benutzer" placeholder="benutzer">
+        <input type="text" name="benutzername" placeholder="Benutzername eingeben">
     </div>
     <div>
-        <input type="text" name="passwort">
+        <input type="password" name="passwort" placeholder="Neues Passwort eingeben">
     </div>
     <div>
-        <input type="submit" name="login" value="Einloggen">
+        <input type="password" name="passwortwdh" placeholder="Neues Passwort erneut eingeben">
+    </div>
+    <div>
+        <input type="text" name="email" placeholder="E-Mail eingeben">
+    </div>
+    <div>
+        <input type="submit" name="login" value="Speichern">
     </div>
 </form>
 
